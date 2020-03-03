@@ -55,6 +55,6 @@ extension ___VARIABLE_sceneName___ViewController: ___VARIABLE_sceneName___ViewCo
 //This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
 extension ___VARIABLE_sceneName___ViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router?.passDataToNextScene(for: segue)
+        router.passDataToNextScene(for: segue)
     }
 }
