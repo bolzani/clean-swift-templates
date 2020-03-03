@@ -24,9 +24,11 @@ protocol ___VARIABLE_sceneName___DataDestination: class {
 class ___VARIABLE_sceneName___Interactor {
     
     var output: ___VARIABLE_sceneName___InteractorOutput?
-    
-    init(output: ___VARIABLE_sceneName___InteractorOutput) {
+    var worker: ___VARIABLE_sceneName___Worker
 
+    init(output: ___VARIABLE_sceneName___InteractorOutput, worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
+        self.output = output
+        self.worker = worker
     }
     
 }
