@@ -21,10 +21,16 @@ protocol ___VARIABLE_sceneName___DataDestination: class {
     
 }
 
-class ___VARIABLE_sceneName___Interactor {
+class ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataSource, ___VARIABLE_sceneName___DataDestination {
     
     var output: ___VARIABLE_sceneName___InteractorOutput
     var worker: ___VARIABLE_sceneName___Worker
+
+    // MARK: DataSource
+
+    // MARK: DataDestination
+    
+    // MARK: - Object Lifecycle
 
     init(output: ___VARIABLE_sceneName___InteractorOutput, worker: ___VARIABLE_sceneName___Worker = ___VARIABLE_sceneName___Worker()) {
         self.output = output
@@ -37,16 +43,4 @@ class ___VARIABLE_sceneName___Interactor {
 
 extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___InteractorInput {
 
-}
-
-// MARK: - ___VARIABLE_sceneName___DataSource
-
-extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataSource {
-    
-}
-
-// MARK: - ___VARIABLE_sceneName___DataDestination
-
-extension ___VARIABLE_sceneName___Interactor: ___VARIABLE_sceneName___DataDestination {
-    
 }
