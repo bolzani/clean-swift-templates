@@ -18,7 +18,7 @@ protocol ___VARIABLE_sceneName___ViewControllerOutput {
 class ___VARIABLE_sceneName___ViewController: UIViewController {
     
     var output: ___VARIABLE_sceneName___ViewControllerOutput!
-    var router: ___VARIABLE_sceneName___Router!
+    var router: ___VARIABLE_sceneName___RoutingLogic!
     
     // MARK: Object lifecycle
     
@@ -50,11 +50,4 @@ extension ___VARIABLE_sceneName___ViewController {
 
 extension ___VARIABLE_sceneName___ViewController: ___VARIABLE_sceneName___ViewControllerInput {
 
-}
-
-//This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension ___VARIABLE_sceneName___ViewController {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(for: segue)
-    }
 }

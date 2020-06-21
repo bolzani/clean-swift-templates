@@ -10,7 +10,11 @@
 
 import UIKit
 
-class ___VARIABLE_sceneName___Router {
+protocol ___VARIABLE_sceneName___RoutingLogic: NSObjectProtocol {
+    var dataDestination: ___VARIABLE_sceneName___DataDestination? { get }
+}
+
+class ___VARIABLE_sceneName___Router: NSObject {
     
     weak var viewController: ___VARIABLE_sceneName___ViewController?
     weak private var dataSource: ___VARIABLE_sceneName___DataSource?
@@ -25,5 +29,32 @@ class ___VARIABLE_sceneName___Router {
     func passDataToNextScene(for segue: UIStoryboardSegue) {
         // NOTE: Teach the router which scenes it can communicate with
         
+    }
+}
+
+// MARK: - ___VARIABLE_sceneName___RoutingLogic
+extension ___VARIABLE_sceneName___Router: ___VARIABLE_sceneName___RoutingLogic {
+
+}
+
+// MARK: - Data Passing
+extension ___VARIABLE_sceneName___Router {
+
+}
+
+// MARK: - Navigation
+extension ___VARIABLE_sceneName___Router {
+
+}
+
+// MARK: - Segues
+extension ___VARIABLE_sceneName___ViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let scene = segue.identifier {
+          let selector = NSSelectorFromString("routeTo\(scene):")
+          if let router = router, router.responds(to: selector) {
+            router.perform(selector, with: segue)
+          }
+        }
     }
 }
