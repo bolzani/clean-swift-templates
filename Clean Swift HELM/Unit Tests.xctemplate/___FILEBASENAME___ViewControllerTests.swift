@@ -11,18 +11,20 @@
 @testable import ___PROJECTNAME___
 import XCTest
 
-class ___FILEBASENAMEASIDENTIFIER___ViewControllerTests: XCTestCase {
+class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
     // MARK: Subject under test
 
-    var sut: ___FILEBASENAMEASIDENTIFIER___ViewController!
+    var sut: ___VARIABLE_sceneName___ViewController!
     var window: UIWindow!
+    private var outputSpy: OutputSpy!
+    private var routerSpy: RouterSpy!
 
     // MARK: Test lifecycle
 
     override func setUp() {
     super.setUp()
         window = UIWindow()
-        setup___FILEBASENAMEASIDENTIFIER___ViewController()
+        setup___VARIABLE_sceneName___ViewController()
     }
 
     override func tearDown() {
@@ -32,18 +34,20 @@ class ___FILEBASENAMEASIDENTIFIER___ViewControllerTests: XCTestCase {
 
     // MARK: Test setup
 
-    func setup___FILEBASENAMEASIDENTIFIER___ViewController() {
+    func setup___VARIABLE_sceneName___ViewController() {
         let bundle = Bundle.main
         let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-        sut = storyboard.instantiateViewController(withIdentifier: "___FILEBASENAMEASIDENTIFIER___ViewController") as! ___FILEBASENAMEASIDENTIFIER___ViewController
+        outputSpy = OutputSpy()
+        routerSpy = RouterSpy()
+        sut = (storyboard.instantiateViewController(withIdentifier: "___VARIABLE_sceneName___ViewController") as! ___VARIABLE_sceneName___ViewController)
+        sut.output = outputSpy
+        sut.router = routerSpy
     }
 
     func loadView() {
         window.addSubview(sut.view)
         RunLoop.current.run(until: Date())
     }
-
-    // MARK: Test doubles
 
     // MARK: Tests
 
@@ -54,4 +58,15 @@ class ___FILEBASENAMEASIDENTIFIER___ViewControllerTests: XCTestCase {
 
         // Then
     }
+}
+
+// MARK: Test doubles
+
+private class OutputSpy: ___VARIABLE_sceneName___ViewControllerOutput {
+    
+}
+
+
+@objc private class RouterSpy: NSObject, ___VARIABLE_sceneName___RoutingLogic {
+    var dataDestination: ___VARIABLE_sceneName___DataDestination?
 }

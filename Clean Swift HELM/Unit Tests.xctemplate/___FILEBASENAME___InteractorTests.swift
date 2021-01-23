@@ -11,16 +11,17 @@
 @testable import ___PROJECTNAME___
 import XCTest
 
-class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase {
+class ___VARIABLE_sceneName___InteractorTests: XCTestCase {
     // MARK: Subject under test
 
-    var sut: ___FILEBASENAMEASIDENTIFIER___Interactor!
+    var sut: ___VARIABLE_sceneName___Interactor!
+    private var spy: OutputSpy!
 
     // MARK: Test lifecycle
 
     override func setUp() {
         super.setUp()
-        setup___FILEBASENAMEASIDENTIFIER___Interactor()
+        setup___VARIABLE_sceneName___Interactor()
     }
 
     override func tearDown() {
@@ -29,11 +30,10 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase {
 
     // MARK: Test setup
 
-    func setup___FILEBASENAMEASIDENTIFIER___Interactor() {
-        sut = ___FILEBASENAMEASIDENTIFIER___Interactor()
+    func setup___VARIABLE_sceneName___Interactor() {
+        spy = OutputSpy()
+        sut = ___VARIABLE_sceneName___Interactor(output: spy)
     }
-
-    // MARK: Test doubles
 
     // MARK: Tests
 
@@ -44,4 +44,10 @@ class ___FILEBASENAMEASIDENTIFIER___InteractorTests: XCTestCase {
 
         // Then
     }
+}
+
+// MARK: - Test Doubles
+
+private class OutputSpy: ___VARIABLE_sceneName___InteractorOutput {
+    
 }
